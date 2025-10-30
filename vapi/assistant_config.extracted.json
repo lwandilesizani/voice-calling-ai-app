@@ -1,0 +1,61 @@
+{
+  "name": "[ai-dialer] HVAC Sales Agent",
+  "voice": {
+    "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+    "provider": "11labs",
+    "stability": 0.6,
+    "similarityBoost": 0.75,
+    "fillerInjectionEnabled": false,
+    "optimizeStreamingLatency": 4
+  },
+  "model": {
+    "model": "gpt-4o",
+    "toolIds": [
+      "${TOOL_ID_CHECK_AVAILABILITY}",
+      "${TOOL_ID_BOOK_APPOINTMENT}"
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "@[prompts/system-prompt.md]"
+      }
+    ],
+    "provider": "openai",
+    "temperature": 0.2
+  },
+  "firstMessage": "@[prompts/first-message.txt]",
+  "endCallFunctionEnabled": true,
+  "endCallMessage": "@[prompts/end-call-message.txt]",
+  "transcriber": {
+    "model": "nova-2",
+    "language": "en",
+    "provider": "deepgram"
+  },
+  "silenceTimeoutSeconds": 26,
+  "clientMessages": [
+    "transcript",
+    "hang",
+    "function-call",
+    "speech-update",
+    "metadata",
+    "transfer-update",
+    "conversation-update"
+  ],
+  "serverMessages": [
+    "end-of-call-report"
+  ],
+  "responseDelaySeconds": 0.7,
+  "server": {
+    "url": "${BASE_URL}/api/integrations/vapi",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "maxDurationSeconds": 300,
+  "backchannelingEnabled": false,
+  "analysisPlan": {
+    "summaryPrompt": "@[prompts/summary-prompt.md]",
+    "successEvaluationPrompt": "@[prompts/success-evaluation.md]",
+    "structuredDataPrompt": "@[prompts/structured-data-prompt.md]",
+    "structuredDataSchema": "@[prompts/structured-data-schema.json]"
+  },
+  "backgroundDenoisingEnabled": false
+}

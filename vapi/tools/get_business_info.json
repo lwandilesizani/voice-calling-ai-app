@@ -1,0 +1,18 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_business_info",
+    "async": false,
+    "description": "Gets information about the logged-in business owner",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "server": {
+    "url": "${BASE_URL}/api/vapi/booking-tools/get_business_info",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "async": false
+} 

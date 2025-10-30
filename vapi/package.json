@@ -1,0 +1,10 @@
+{
+  "name": "vapi-tools",
+  "version": "1.0.0",
+  "description": "VAPI integration tools",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "minimist": "^1.2.8"
+  }
+}

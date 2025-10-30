@@ -1,0 +1,58 @@
+{
+  "type": "function",
+  "function": {
+    "name": "update_booking",
+    "async": false,
+    "description": "Updates an existing booking with new information",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "booking_id": {
+          "type": "string",
+          "description": "ID of the booking to update"
+        },
+        "service_id": {
+          "type": "string",
+          "description": "ID of the service to change to (optional)"
+        },
+        "customer_name": {
+          "type": "string",
+          "description": "Updated name of the customer (optional)"
+        },
+        "customer_email": {
+          "type": "string",
+          "description": "Updated email address of the customer (optional)"
+        },
+        "customer_phone": {
+          "type": "string",
+          "description": "Updated contact phone number of the customer (optional)"
+        },
+        "booking_date": {
+          "type": "string",
+          "description": "Updated date for the booking in YYYY-MM-DD format (optional)"
+        },
+        "booking_time": {
+          "type": "string",
+          "description": "Updated time for the booking in HH:MM format (24-hour) (optional)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Updated notes or special requests for the booking (optional)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["confirmed", "cancelled", "completed", "pending"],
+          "description": "Updated status of the booking (optional)"
+        }
+      },
+      "required": [
+        "booking_id"
+      ]
+    }
+  },
+  "server": {
+    "url": "${BASE_URL}/api/vapi/booking-tools/update_booking",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "async": false
+} 

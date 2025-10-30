@@ -1,0 +1,54 @@
+{
+  "name": "Trustworthy Landscape Assistant",
+  "voice": {
+    "voiceId": "248be419-c632-4f23-adf1-5324ed7dbf1d",
+    "provider": "cartesia",
+    "fillerInjectionEnabled": false,
+    "optimizeStreamingLatency": 4
+  },
+  "model": {
+    "model": "gpt-3.5-turbo",
+    "provider": "openai",
+    "temperature": 0.2,
+    "maxTokens": 300,
+    "messages": [
+      {
+        "role": "system",
+        "content": "do not talk fast, be patient with the customer"
+      }
+    ],
+    "toolIds": [
+      "df50e539-f890-4a31-8455-7bb85d00456f",
+      "7122527e-11fd-4a94-884d-d8c3a1f8132a",
+      "c81fbd60-0447-4e83-b579-469652048e39",
+      "792bcea1-86b9-4bea-a4f1-ff3e15005c31",
+      "3721d4f2-0b4d-42b9-939b-e72adc9c63be",
+      "89284923-bfad-4ef1-85b8-b8df1fcc73a1"
+    ]
+  },
+  "firstMessage": "Hi, is this {{lead_contact_name}} from {{lead_company_name}}?",
+  "endCallFunctionEnabled": true,
+  "endCallMessage": "Thank you for your time today. Have a great rest of your day!",
+  "transcriber": {
+    "model": "nova",
+    "language": "en",
+    "provider": "deepgram"
+  },
+  "silenceTimeoutSeconds": 26,
+  "clientMessages": [
+    "transcript",
+    "hang",
+    "function-call",
+    "speech-update",
+    "metadata",
+    "transfer-update",
+    "conversation-update"
+  ],
+  "serverMessages": [
+    "end-of-call-report"
+  ],
+  "responseDelaySeconds": 0.7,
+  "maxDurationSeconds": 300,
+  "backchannelingEnabled": false,
+  "backgroundDenoisingEnabled": false
+}

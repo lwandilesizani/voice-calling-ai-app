@@ -1,0 +1,39 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_business_availability",
+    "async": false,
+    "description": "Gets the available time slots for a specific service or date range",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "description": "ID of the service to check availability for"
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Start date for availability check in YYYY-MM-DD format"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date for availability check in YYYY-MM-DD format"
+        },
+        "timezone": {
+          "type": "string",
+          "description": "The timezone to return available slots in (e.g., 'America/Los_Angeles')"
+        }
+      },
+      "required": [
+        "service_id",
+        "start_date",
+        "timezone"
+      ]
+    }
+  },
+  "server": {
+    "url": "${BASE_URL}/api/vapi/booking-tools/get_business_availability",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "async": false
+} 

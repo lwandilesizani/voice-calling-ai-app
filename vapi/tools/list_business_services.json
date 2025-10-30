@@ -1,0 +1,18 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_business_services",
+    "async": false,
+    "description": "Lists all services offered by the logged-in business owner",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "server": {
+    "url": "${BASE_URL}/api/vapi/booking-tools/list_business_services",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "async": false
+} 

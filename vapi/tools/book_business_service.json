@@ -1,0 +1,54 @@
+{
+  "type": "function",
+  "function": {
+    "name": "book_business_service",
+    "async": false,
+    "description": "Books a service appointment with the business owner",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "description": "ID of the service to book"
+        },
+        "customer_name": {
+          "type": "string",
+          "description": "Full name of the customer"
+        },
+        "customer_email": {
+          "type": "string",
+          "description": "Email address of the customer"
+        },
+        "customer_phone": {
+          "type": "string",
+          "description": "Contact phone number of the customer"
+        },
+        "booking_date": {
+          "type": "string",
+          "description": "Date for the booking in YYYY-MM-DD format"
+        },
+        "booking_time": {
+          "type": "string",
+          "description": "Time for the booking in HH:MM format (24-hour)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Any additional notes or special requests for the booking"
+        }
+      },
+      "required": [
+        "service_id",
+        "customer_name",
+        "customer_email",
+        "customer_phone",
+        "booking_date",
+        "booking_time"
+      ]
+    }
+  },
+  "server": {
+    "url": "${BASE_URL}/api/vapi/booking-tools/book_business_service",
+    "secret": "${VAPI_SECRET_KEY}"
+  },
+  "async": false
+} 

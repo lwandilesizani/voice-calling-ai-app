@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "outcome": {
+      "description": "Precisely one of \"scheduled\", \"not_interested\", or \"no_answer\" only.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "outcome"
+  ]
+}

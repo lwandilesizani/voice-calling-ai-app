@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules
+
+# Generated files
+*_response.json
+vapi-config.json
+
+# Debug logs
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env*
+!.env.example
+
+# OS
+.DS_Store
